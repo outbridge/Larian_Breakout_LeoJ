@@ -29,6 +29,7 @@ int main()
     }
 
     glfwMakeContextCurrent(g_Window);
+    glfwSwapInterval(1); // v-sync
     gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
     glfwSetFramebufferSizeCallback(g_Window, FramebufferSizeCallback);
 
