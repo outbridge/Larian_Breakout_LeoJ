@@ -119,5 +119,11 @@
     <ClInclude Include="ECS\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\glfw3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\glfw3native.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -168,6 +168,8 @@
     <ClInclude Include="ECS\System.h" />
     <ClInclude Include="ECS\SystemManager.h" />
     <ClInclude Include="ECS\World.h" />
+    <ClInclude Include="include\glfw3.h" />
+    <ClInclude Include="include\glfw3native.h" />
     <ClInclude Include="Level\LevelManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="States\GameState.h" />
