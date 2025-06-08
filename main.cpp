@@ -17,7 +17,6 @@ int main()
         return -1;
 
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE); // prevent resizing
-
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -36,13 +35,22 @@ int main()
     GameStateManager gsm;
     gsm.PushState(std::make_unique<PlayingState>(g_Window));
 
+    float lastTime = glfwGetTime();
+
     while (!glfwWindowShouldClose(g_Window))
     {
+        float currentTime = glfwGetTime();
+        float deltaTime = currentTime - lastTime;
+        lastTime = currentTime;
+
+        // Optional: clamp to max frame time (avoids issues on lag spikes)
+        deltaTime = std::min(deltaTime, 0.033f); // ~30 FPS cap
+
         GameState* state = gsm.GetActiveState();
         if (state)
         {
             state->HandleInput();
-            state->Update(0.016f);
+            state->Update(deltaTime); // use actual deltaTime
             state->Render();
         }
 
@@ -54,3 +62,4 @@ int main()
     glfwTerminate();
     return 0;
 }
+

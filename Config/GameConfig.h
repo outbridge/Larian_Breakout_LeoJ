@@ -53,13 +53,13 @@ namespace GameConfig
 
         cfg.PaddleSize = glm::vec2(100.0f - level * 5.0f, 20.0f); // gets smaller
         cfg.PaddleStartPos = glm::vec2(400.0f, 50.0f);
-        cfg.PaddleSpeed = 200.0f + level * 10.0f;
+        cfg.PaddleSpeed = 300.0f + level * 10.0f;
         cfg.PaddleColor = glm::vec3(0.2f, 0.6f, 1.0f);
 
         cfg.BallSize = glm::vec2(16.0f);
         cfg.BallStartPos = glm::vec2(400.0f, 300.0f);
-        cfg.BallInitialVelocity = glm::vec2(40.0f + level * 5.0f, -40.0f - level * 5.0f);
-        cfg.BallMaxSpeed = 150.0f;
+        cfg.BallInitialVelocity = glm::vec2(150.0f + level * 10.0f, -150.0f - level * 10.0f);
+        cfg.BallMaxSpeed = 250.0f;
         cfg.BallColor = glm::vec3(1.0f);
 
         return cfg;
