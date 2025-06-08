@@ -108,7 +108,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;user32.lib;gdi32.lib;Shell32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -132,7 +132,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;user32.lib;gdi32.lib;Shell32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)libs\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -150,7 +150,6 @@
     <ClCompile Include="ECS\SystemManager.cpp" />
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Level\LevelManager.cpp" />
-    <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="States\GameStateManager.cpp" />
     <ClCompile Include="States\PlayingState.cpp" />
@@ -175,7 +174,6 @@
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\glfw3native.h" />
     <ClInclude Include="Level\LevelManager.h" />
-    <ClInclude Include="libs\glad\include\glad\glad.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="States\GameState.h" />
     <ClInclude Include="States\GameStateManager.h" />

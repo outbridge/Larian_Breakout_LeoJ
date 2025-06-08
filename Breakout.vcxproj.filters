@@ -54,9 +54,6 @@
     <ClCompile Include="Level\LevelManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="libs\glad\src\glad.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Components\CharacteristicComponent.h">
@@ -126,9 +123,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\glfw3native.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\glad\include\glad\glad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
