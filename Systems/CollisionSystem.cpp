@@ -5,6 +5,9 @@
 #include "../Config/Constants.h"
 #include "../ECS/World.h"
 
+// temp hack for score, should be a callback eventually and event
+extern int g_GlobalScore;
+
 void CollisionSystem::SetBall(Entity ball)
 {
     m_Ball = ball;
@@ -103,6 +106,7 @@ void CollisionSystem::HandleBallBrickCollision(World& world)
                 ballP.m_Velocity.y *= -1;
 
             toRemove.push_back(brick);
+            g_GlobalScore += 10; // +10 per brick
         }
     }
 

@@ -7,6 +7,8 @@
 #include "../Level/LevelManager.h"
 #include "../Config/GameConfig.h"
 
+int g_GlobalScore = 0;
+
 PlayingState::PlayingState(GLFWwindow* window)
     : m_Window(window)
 {
@@ -72,6 +74,8 @@ void PlayingState::HandleInput()
 
 void PlayingState::Update(float deltaTime)
 {
+    m_Score = g_GlobalScore;
+
     if (m_GameWon || m_GameOver) return;
 
     const auto cfg = GameConfig::ForLevel(m_CurrentLevel);
@@ -150,6 +154,17 @@ void PlayingState::Render()
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     m_RenderSystem->Update(m_World);
+
+    std::string title;
+
+    if (m_GameOver)
+        title = "You lost! Press R to restart | Score: " + std::to_string(m_Score);
+    else if (!m_BallLaunched)
+        title = "Press SPACE to launch, LEFT/RIGHT to move | Score: " + std::to_string(m_Score);
+    else
+        title = "Breakout | Score: " + std::to_string(m_Score);
+
+    glfwSetWindowTitle(m_Window, title.c_str());
 }
 
 void PlayingState::CreatePaddle()
@@ -213,6 +228,7 @@ void PlayingState::ResetGameState()
     m_GameWon = false;
     m_LevelComplete = false;
     m_CurrentLevel = 0;
+    m_Score = 0;
 
     m_World.Clear();
     RegisterComponentsAndSystems();

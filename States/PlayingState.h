@@ -41,6 +41,7 @@ private:
     bool m_GameOver = false;
     bool m_LevelComplete = false;
     int m_CurrentLevel = 0;
+    int m_Score = 0;
 
     void CreatePaddle();
     void CreateBall();

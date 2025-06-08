@@ -45,7 +45,11 @@ namespace GameConfig
         cfg.BrickMarginTop = 40.0f;
         cfg.BrickMarginBottom = 200.0f;
 
-        cfg.BrickColor = glm::vec3(1.0f - level * 0.05f, 0.4f, 0.4f); // slightly darken over time
+        cfg.BrickColor = glm::vec3(
+            0.5f + 0.5f * std::sin(level * 0.5f),
+            0.5f + 0.5f * std::sin(level * 0.3f + 1.0f),
+            0.5f + 0.5f * std::sin(level * 0.7f + 2.0f)
+        );
 
         cfg.PaddleSize = glm::vec2(100.0f - level * 5.0f, 20.0f); // gets smaller
         cfg.PaddleStartPos = glm::vec2(400.0f, 50.0f);
