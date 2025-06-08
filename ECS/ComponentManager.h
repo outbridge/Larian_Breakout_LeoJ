@@ -8,7 +8,6 @@
 
 #include "../Core/Types.h"
 
-
 class IComponentArray
 {
 public:

@@ -13,6 +13,6 @@ struct CharacteristicComponent
 {
     ObjectRole Role = ObjectRole::None;
 
-    // Optional bit flags for finer-grain classification later
+    // optional bit flags for finer-grain classification later
     uint32_t Flags = 0;
 };

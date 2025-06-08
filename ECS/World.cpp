@@ -50,7 +50,7 @@ std::vector<Entity> World::GetAllEntities() const
     std::vector<Entity> entities;
     for (Entity entity = 0; entity < MAX_ENTITIES; ++entity)
     {
-        if (IsValid(entity))  // Assumes you already have IsValid() implemented
+        if (IsValid(entity))
             entities.push_back(entity);
     }
     return entities;

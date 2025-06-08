@@ -5,7 +5,7 @@ struct PhysicsComponent
 {
     glm::vec2 m_Velocity{ 0.0f };
     glm::vec2 m_Acceleration{ 0.0f };
-    float m_Friction = 5.0f;         // Higher = stronger deceleration
+    float m_Friction = 5.0f;
     bool m_IsKinematic = false;
 
     PhysicsComponent() = default;

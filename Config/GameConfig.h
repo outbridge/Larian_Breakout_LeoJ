@@ -58,8 +58,8 @@ namespace GameConfig
 
         cfg.BallSize = glm::vec2(16.0f);
         cfg.BallStartPos = glm::vec2(400.0f, 300.0f);
-        cfg.BallInitialVelocity = glm::vec2(150.0f + level * 10.0f, -150.0f - level * 10.0f);
-        cfg.BallMaxSpeed = 250.0f;
+        cfg.BallInitialVelocity = glm::vec2(150.0f + level * 15.0f, -150.0f - level * 15.0f);
+        cfg.BallMaxSpeed = 300.0f;
         cfg.BallColor = glm::vec3(1.0f);
 
         return cfg;

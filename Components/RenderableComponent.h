@@ -5,5 +5,5 @@
 struct RenderableComponent
 {
     glm::vec3 m_Color = { 1.0f, 1.0f, 1.0f }; // RGB
-    // Future: texture ID, shader info, layer, etc.
+    // texture ID, shader info, layer, etc.
 };

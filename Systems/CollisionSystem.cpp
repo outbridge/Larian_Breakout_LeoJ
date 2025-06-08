@@ -30,8 +30,7 @@ void CollisionSystem::ClearBricks()
 
 void CollisionSystem::Update(World& world, float deltaTime)
 {
-    // You should ideally pass currentLevel to the system, or store it
-    const auto cfg = GameConfig::ForLevel(world.GetCurrentLevel());  // <== depends on your implementation
+    const auto cfg = GameConfig::ForLevel(world.GetCurrentLevel());
 
     HandleBallBounds(world, cfg);
     HandleBallPaddleCollision(world, cfg);

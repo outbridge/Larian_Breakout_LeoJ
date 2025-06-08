@@ -112,14 +112,14 @@ void RenderSystem::Update(World& world)
     glUseProgram(m_ShaderProgram);
     glBindVertexArray(m_VAO);
 
-    glm::vec2 screenSize = { 800.0f, 600.0f }; // Match your window size
+    glm::vec2 screenSize = { 800.0f, 600.0f }; // prolly read this somewhere else later
 
     for (Entity entity : GetEntities())
     {
         auto& transform = world.GetComponent<TransformComponent>(entity);
         auto& renderable = world.GetComponent<RenderableComponent>(entity);
 
-        // Convert position and scale from pixel space to NDC space (-1 to 1)
+        // convert position and scale from pixel space to NDC space (-1 to 1)
         glm::vec2 posNDC = (transform.m_Position / screenSize) * 2.0f - 1.0f;
         glm::vec2 scaleNDC = transform.m_Scale / screenSize * 2.0f;
 
