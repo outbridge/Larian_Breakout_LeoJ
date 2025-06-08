@@ -103,13 +103,13 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\glfw\include;$(SolutionDir)libs\glad\include;$(SolutionDir)libs\glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\include;$(SolutionDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(ProjectDir)glfw3.dll" "$(OutDir)"</Command>
@@ -126,13 +126,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)libs\glfw\include;$(SolutionDir)libs\glad\include;$(SolutionDir)libs\glm</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\include;$(SolutionDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\glfw\lib-vc2022</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>copy /Y "$(ProjectDir)glfw3.dll" "$(OutDir)"</Command>
@@ -149,6 +150,7 @@
     <ClCompile Include="ECS\SystemManager.cpp" />
     <ClCompile Include="ECS\World.cpp" />
     <ClCompile Include="Level\LevelManager.cpp" />
+    <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="States\GameStateManager.cpp" />
     <ClCompile Include="States\PlayingState.cpp" />
@@ -173,6 +175,7 @@
     <ClInclude Include="include\glfw3.h" />
     <ClInclude Include="include\glfw3native.h" />
     <ClInclude Include="Level\LevelManager.h" />
+    <ClInclude Include="libs\glad\include\glad\glad.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="States\GameState.h" />
     <ClInclude Include="States\GameStateManager.h" />

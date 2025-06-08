@@ -1,6 +1,5 @@
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <memory>
+#include "pch.h"
+
 #include "States/GameStateManager.h"
 #include "States/PlayingState.h"
 
