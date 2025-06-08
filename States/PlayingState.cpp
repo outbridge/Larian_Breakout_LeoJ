@@ -228,7 +228,7 @@ void PlayingState::ResetGameState()
     m_GameWon = false;
     m_LevelComplete = false;
     m_CurrentLevel = 0;
-    m_Score = 0;
+    m_Score = g_GlobalScore = 0;
 
     m_World.Clear();
     RegisterComponentsAndSystems();

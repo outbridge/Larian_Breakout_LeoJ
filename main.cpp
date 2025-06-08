@@ -35,16 +35,13 @@ int main()
     GameStateManager gsm;
     gsm.PushState(std::make_unique<PlayingState>(g_Window));
 
-    float lastTime = glfwGetTime();
+    double lastTime = glfwGetTime();
 
     while (!glfwWindowShouldClose(g_Window))
     {
-        float currentTime = glfwGetTime();
-        float deltaTime = currentTime - lastTime;
+        double currentTime = glfwGetTime();
+        float deltaTime = static_cast<float>(currentTime - lastTime);
         lastTime = currentTime;
-
-        // Optional: clamp to max frame time (avoids issues on lag spikes)
-        deltaTime = std::min(deltaTime, 0.033f); // ~30 FPS cap
 
         GameState* state = gsm.GetActiveState();
         if (state)
